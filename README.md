@@ -33,7 +33,9 @@ INSERT INTO cadastro (nome, sobrenome, datanasc) VALUES
 ### Preview
 
 <img src="./preview/mysql-start.png" alt="">
-
+<br />
+<img src="./preview/home.png" alt="">
+<br />
 > * Ref.: Crud 31min
 ``` 
 https://www.youtube.com/watch?v=9MJ6NYdRmqs
