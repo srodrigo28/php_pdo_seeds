@@ -28,7 +28,15 @@ INSERT INTO cadastro (nome, sobrenome, datanasc) VALUES
 ('Amanda', 'Martins', '25/08/1993');
 ```
 
-> * Ref.:
-```
+### Preview
+
+<img src="./preview/mysql-start.png" alt="">
+
+> * Ref.: Crud 31min
+``` 
 https://www.youtube.com/watch?v=9MJ6NYdRmqs
+```
+
+> * Re.: Login 25min
+https://www.youtube.com/watch?v=WJQUxQgU_0w
 ```
