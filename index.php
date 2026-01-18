@@ -18,37 +18,9 @@
     $stmt->execute();
 
 ?>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="scroll.css">
-    <link 
-        rel="stylesheet" 
-        crossorigin="anonymous" 
-        referrerpolicy="no-referrer"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" 
-        integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg==" 
-    />
-    <script 
-        defer
-        crossorigin="anonymous" 
-        referrerpolicy="no-referrer">
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js" 
-        integrity="sha512-3dZ9wIrMMij8rOH7X3kLfXAzwtcHpuYpEgQg1OA4QAob1e81H8ntUQmQm3pBudqIoySO5j0tHN4ENzA6+n2r4w==" 
-    </script>
-    <script 
-        defer
-        crossorigin="anonymous" 
-        referrerpolicy="no-referrer">
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" 
-        integrity="sha512-VK2zcvntEufaimc+efOYi622VN5ZacdnufnmX7zIhCPmjhKnOi9ZDMtg1/ug5l183f19gG1/cBstPO4D8N/Img==" 
-    </script>
-</head>
+<?= include_once './src/config/head.php'; ?>
 <body>
-    <div class="bg-primary text-white p-3 py-5">
+    <div class="bg-primary text-white">
         <h1 class="text-center">Cadastro Cliente</h1>
     </div>
 
@@ -66,7 +38,7 @@
         <table class="w-50 table table-responsive mx-auto my-5">
             <thead class="">
                 <tr class="">
-                    <th class="text-center">Nome</th>
+                    <th class="">Nome</th>
                     <th class="text-center">Data Nasc</th>
                     <th class="text-center">Ações</th>
                 </tr>
@@ -77,9 +49,9 @@
                     <td class="w-50"> <?=($row['nome']); ?>      </td>
                     <td class="text-center w-25"> <?=($row['datanasc']); ?>  </td>
                     <td>
-                        <a class="btn bt-sm btn-primary" href="">Ver</a>
-                        <a class="btn bt-sm btn-warning text-white" href="">Editar</a>
-                        <a class="btn bt-sm btn-danger"  href="">Excluir</a>
+                        <a class="btn bt-sm btn-primary" href="./src/visualizar.php?id=<?=($row['id']); ?>">Ver</a>
+                        <a class="btn bt-sm btn-warning text-white" href="./src/editar.php?id=<?=($row['id']); ?>">Editar</a>
+                        <a class="btn bt-sm btn-danger"  href="./src/deletar.php?id=<?=($row['id']); ?>">Excluir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

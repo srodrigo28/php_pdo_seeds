@@ -1,5 +1,9 @@
 ## Crud PHP PDO
 
+<br />
+<img src="./preview/home.png" alt="">
+<br />
+
 ### Banco mysql
 ```
 CREATE DATABASE IF NOT EXISTS sistema_cadastro;
@@ -34,8 +38,7 @@ INSERT INTO cadastro (nome, sobrenome, datanasc) VALUES
 
 <img src="./preview/mysql-start.png" alt="">
 <br />
-<img src="./preview/home.png" alt="">
-<br />
+
 > * Ref.: Crud 31min
 ``` 
 https://www.youtube.com/watch?v=9MJ6NYdRmqs
