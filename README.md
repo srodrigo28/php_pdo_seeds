@@ -15,6 +15,8 @@ CREATE TABLE IF NOT EXISTS cadastro (
 
 ### seeds
 ```
+use sistema_cadastro;
+
 INSERT INTO cadastro (nome, sobrenome, datanasc) VALUES 
 ('João', 'Silva', '15/03/1985'),
 ('Maria', 'Santos', '22/07/1992'),

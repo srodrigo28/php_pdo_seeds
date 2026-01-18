@@ -6,9 +6,13 @@ $sobrenome = filter_input(INPUT_POST, 'sobrenome', FILTER_DEFAULT);
 $datanasc  = filter_input(INPUT_POST, 'datanasc', FILTER_DEFAULT);
 
 try {
-    $sql = "INSERT INTO `cadastro`(nome, sobrenome, dataanasc) VALUES ('$nome', '$sobrenome', '$datanasc')";
-    $stmt = $pdo->prepare($sql);
-    // $stmt->execute();
+    $sql = "INSERT INTO `cadastro`(nome, sobrenome, datanasc) VALUES ('$nome', '$sobrenome', '$datanasc')";
+    $stmt = $pdo->query($sql);
+
+    echo "<script>
+            alert('Cliente cadastrado com sucesso!');
+            window.location.href = '../index.php';
+          </script>";
 
 } catch (PDOException $e) {
     echo "<script>alert('Erro ao cadastrar cliente');</script>";

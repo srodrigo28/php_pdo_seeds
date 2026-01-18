@@ -63,28 +63,14 @@
     <div>
         <h2 class="text-center">Lista Cadastrados</h2>
 
-        <table class="w-50 table table-responsive mx-auto my-5">
-            <thead class="">
-                <tr class="">
-                    <th class="text-center">Nome</th>
-                    <th class="text-center">Data Nasc</th>
-                    <th class="text-center">Ações</th>
-                </tr>
-            </thead>
-            <tbody class="scroll-primary">
-                <?php foreach ( $result as $row ): ?>
-                <tr class="">
-                    <td class="w-50"> <?=($row['nome']); ?>      </td>
-                    <td class="text-center w-25"> <?=($row['datanasc']); ?>  </td>
-                    <td>
-                        <a class="btn bt-sm btn-primary" href="">Ver</a>
-                        <a class="btn bt-sm btn-warning text-white" href="">Editar</a>
-                        <a class="btn bt-sm btn-danger"  href="">Excluir</a>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+        <ul class="scroll-primary list-group w-50 mx-auto my-5">
+            <?php 
+                foreach ( $result as $row ) {
+                    echo '<li class="list-group-item">' . $row['nome'] . '</li>'; 
+                } 
+                ?>
+        </ul>
     </div>
+
 </body>
 </html>

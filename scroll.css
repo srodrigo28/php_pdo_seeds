@@ -1,0 +1,40 @@
+/* Estilização da barra de rolagem */
+.scroll-primary {
+    max-height: 400px; /* Defina a altura máxima que desejar */
+    overflow-y: auto;
+}
+
+/* Chrome, Edge e Safari */
+.scroll-primary::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-primary::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.scroll-primary::-webkit-scrollbar-thumb {
+    background: #0d6efd; /* Azul Primary do Bootstrap */
+    border-radius: 10px;
+}
+
+.scroll-primary::-webkit-scrollbar-thumb:hover {
+    background: #0b5ed7; /* Tom mais escuro para o hover */
+}
+
+/* Firefox */
+.scroll-primary {
+    scrollbar-width: thin;
+    scrollbar-color: #0d6efd #f1f1f1;
+}
+
+li{
+    transition: all 0.2s ease;
+}
+
+li:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #0d6efd;
+}
