@@ -1,3 +1,23 @@
+<?php
+    require('./src/config/conn.php');
+
+    $sql = "SELECT * FROM cadastro";
+    $stmt = $pdo->prepare($sql);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    if($result === false){
+        echo "<script>
+                alert('Erro ao buscar clientes cadastrados');
+                setTimeout(function(){
+                    window.location.href = 'index.php';
+                }, 400);
+              </script>";
+        exit;
+    }
+
+    $stmt->execute();
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -37,6 +57,18 @@
         
         <input type="submit" value="Cadastrar" class="btn btn-primary my-2 mx-2">
     </form>
+
+    <div>
+        <h2 class="text-center">Clientes Cadastrados</h2>
+        <ul class="list-group">
+            <?php foreach($result as $row): ?>
+                <li class="list-group-item">
+                    <?php 
+                        echo "ID: " . $row['id'] . " | Nome: " . $row['nome'] . " | Sobrenome: " . $row['sobrenome'] . " | Data de Nascimento: " . $row['datanasc'];
+                    ?>
+                </li>
+            <?php endforeach; ?>
+    </div>
     
 </body>
 </html>
