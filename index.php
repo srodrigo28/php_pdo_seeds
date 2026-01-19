@@ -14,13 +14,11 @@
               </script>";
         exit;
     }
-
-    $stmt->execute();
-
+    
+    include_once './src/config/head.php';
 ?>
-<?= include_once './src/config/head.php'; ?>
 <body>
-    <div class="bg-primary text-white">
+    <div class="bg-primary text-white py-2">
         <h1 class="text-center">Cadastro Cliente</h1>
     </div>
 
@@ -35,7 +33,7 @@
     <div>
         <h2 class="text-center">Lista Cadastrados</h2>
 
-        <table class="w-50 table table-responsive mx-auto my-5">
+        <table class="w-75 table table-responsive mx-auto my-5">
             <thead class="">
                 <tr class="">
                     <th class="">Nome</th>
