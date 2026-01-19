@@ -1,6 +1,6 @@
 <?php
-
 include_once './config/conn.php';
+include_once './config/head.php';
 
 $id = filter_input(INPUT_GET, 'id', FILTER_DEFAULT);
 
@@ -23,13 +23,13 @@ if (!$result) {
 // var_dump($result);
 ?>
 
-<?php include_once './config/head.php'; ?>
-
 <a href="../index.php" class="btn btn-danger m-3">Voltar</a>
 
-<div class="bg-primary pb-3 text-white">
+<div class="bg-primary pb-3 text-white w-50 mx-auto my-5 border rounded-4">
     <h1 class="text-center py-3" ><?= ($result['nome']) ?> <?= ($result['sobrenome']) ?> </h1>
+    
     <h3 class="text-center"><?= ($result['datanasc'])  ?> </h3>
+    <!-- <h3 class="text-center"><?= date('d/m/Y', strtotime($result['datanasc']))  ?> </h3> -->
 </div>
 </body>
 </html>

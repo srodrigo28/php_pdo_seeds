@@ -17,7 +17,7 @@
     
     include_once './src/config/head.php';
 ?>
-<body>
+
     <div class="bg-primary text-white py-2">
         <h1 class="text-center">Cadastro Cliente</h1>
     </div>
@@ -57,4 +57,5 @@
         </table>
     </div>
 </body>
+
 </html>
