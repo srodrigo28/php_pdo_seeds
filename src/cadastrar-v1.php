@@ -1,4 +1,4 @@
-<?php
+<?php // Cadastro V1.0 - 18/01/2026
 include_once './config/conn.php';
 
 $nome      = filter_input(INPUT_POST, 'nome', FILTER_DEFAULT);

@@ -1,7 +1,7 @@
-<?php // v2.1   
+<?php // v1.1
     require('./src/config/conn.php');
 
-    $sql = "SELECT * FROM cadastro";
+    $sql = "SELECT * FROM cadastro ORDER BY nome ASC";
     $stmt = $pdo->query($sql);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -14,10 +14,11 @@
               </script>";
         exit;
     }
+    
+    include_once './src/config/head.php';
 ?>
-<?= include_once './src/config/head.php'; ?>
 
-    <div class="bg-primary text-white p-3 py-5">
+    <div class="bg-primary text-white py-2">
         <h1 class="text-center">Cadastro Cliente</h1>
     </div>
 
@@ -32,12 +33,10 @@
     <div>
         <h2 class="text-center">Lista Cadastrados</h2>
 
-        <ul class="scroll-primary list-group w-50 mx-auto my-5">
-            <?php 
-                foreach ( $result as $row ) {
-                    echo '<li class="list-group-item">' . $row['nome'] . '</li>'; 
-                } 
-                ?>
+        <ul class="scroll-primary">
+            <?php foreach($result as $row): ?>
+                <li class=""> <?php  echo "Nome: " . $row['nome'] . " Sobrenome: " . $row['sobrenome'] . " Data de Nascimento: " . date('d/m/Y', strtotime($row['datanasc'])); ?> </li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </body>
