@@ -51,6 +51,7 @@ include_once './src/config/head.php';
     <?php endif; ?>
 </div>
 
+<!-- Form Cadastro -->
 <form action="./src/cadastrar-v3.php" method="POST" class="d-flex flex-row w-50 mx-auto my-4 gap-3">
     <input
         type="text"
@@ -81,6 +82,7 @@ include_once './src/config/head.php';
     <input type="submit" value="Cadastrar" class="btn btn-primary my-2 mx-2">
 </form>
 
+<!-- Lista dados -->
 <div>
     <h2 class="text-center">Lista Cadastrados</h2>
 
@@ -92,7 +94,6 @@ include_once './src/config/head.php';
                 <th class="text-center">Ações</th>
             </tr>
         </thead>
-
         <tbody class="scroll-primary">
             <!-- CASO NÃO TENHA REGISTROS -->
             <?php if (empty($result)): ?>
@@ -139,6 +140,7 @@ include_once './src/config/head.php';
     </table>
 </div>
 
+<!-- Anima script Mensagem -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const messages = document.querySelectorAll('.flash-message');

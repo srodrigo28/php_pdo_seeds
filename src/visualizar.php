@@ -6,40 +6,32 @@ $id = filter_input(INPUT_GET, 'id', FILTER_DEFAULT);
 
 /* Validar ID se existe */
 if (empty($id)) {
-    echo "<script>  alert('ID não informado!'); </script> ";    
+    echo "<script>  alert('ID não informado!'); </script> ";
     echo "<script>  window.location.href = 'index.php';  </script>";
 }
-    
-// Buscar os dados do registro pelo ID
+
+// Buscar os dados do registro pelo ID no banco de dados
 $sql = "SELECT * FROM cadastro `cadastro` WHERE id = $id";
 $stmt = $pdo->query($sql);
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Verificar se o registro foi encontrado
+// Verificar se o registro foi encontrado no banco de dados
 if (!$result) {
-    echo "<script>  alert('Registro não encontrado!'); </script> ";    
+    echo "<script>  alert('Registro não encontrado!'); </script> ";
     echo "<script>  window.location.href = 'index.php';  </script>";
 }
 // var_dump($result);
 ?>
 
+<!-- HTML para exibir os dados do registro -->
 <a href="../index.php" class="btn btn-danger m-3">Voltar</a>
 
 <div class="bg-primary pb-3 text-white w-50 mx-auto my-5 border rounded-4">
-    <h1 class="text-center py-3" ><?= ($result['nome']) ?> <?= ($result['sobrenome']) ?> </h1>
-    
+    <h1 class="text-center py-3"><?= ($result['nome']) ?> <?= ($result['sobrenome']) ?> </h1>
+
     <h3 class="text-center"><?= ($result['datanasc'])  ?> </h3>
     <h3 class="text-center"><?= date('d/m/Y', strtotime($result['datanasc']))  ?> </h3>
 </div>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
