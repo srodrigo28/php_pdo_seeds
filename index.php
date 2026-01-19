@@ -1,7 +1,7 @@
 <?php
     require('./src/config/conn.php');
 
-    $sql = "SELECT * FROM cadastro";
+    $sql = "SELECT * FROM cadastro ORDER BY nome ASC";
     $stmt = $pdo->query($sql);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -45,7 +45,7 @@
                 <?php foreach ( $result as $row ): ?>
                 <tr class="">
                     <td class="w-50"> <?=($row['nome']); ?>      </td>
-                    <td class="text-center w-25"> <?=($row['datanasc']); ?>  </td>
+                    <td class="text-center w-25"> <?= date('d/m/Y', strtotime($row['datanasc']))  ?>  </td>
                     <td>
                         <a class="btn bt-sm btn-primary" href="./src/visualizar.php?id=<?=($row['id']); ?>">Ver</a>
                         <a class="btn bt-sm btn-warning text-white" href="./src/editar.php?id=<?=($row['id']); ?>">Editar</a>

@@ -29,7 +29,7 @@ if (!$result) {
     <h1 class="text-center py-3" ><?= ($result['nome']) ?> <?= ($result['sobrenome']) ?> </h1>
     
     <h3 class="text-center"><?= ($result['datanasc'])  ?> </h3>
-    <!-- <h3 class="text-center"><?= date('d/m/Y', strtotime($result['datanasc']))  ?> </h3> -->
+    <h3 class="text-center"><?= date('d/m/Y', strtotime($result['datanasc']))  ?> </h3>
 </div>
 </body>
 </html>
